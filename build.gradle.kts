@@ -31,7 +31,17 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 	runtimeOnly("com.h2database:h2")
+
+	// Spring Boot 4 Flyway Starter so autoconfiguration works
+	implementation("org.springframework.boot:spring-boot-starter-flyway")
+
+
 	runtimeOnly("org.postgresql:postgresql")
+	// The core Flyway migration engine
+	implementation("org.flywaydb:flyway-core")
+
+    // The PostgreSQL-specific Flyway module
+	implementation("org.flywaydb:flyway-database-postgresql")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
 	testImplementation("org.springframework.boot:spring-boot-starter-security-oauth2-resource-server-test")
